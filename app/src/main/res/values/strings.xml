@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">MyBombTest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_info">Fake bomb</string>
+
+
+
+
+<!--    Fragment one-->
+
+    <string name="txt_time">00:00</string>
+    <string name="btn_button">Button</string>
+    <string name="btn_enter">Enter</string>
+    <string name="btn_clear">Clear</string>
+    <string name="txt_diffuse">^defuse code^</string>
+
+
+
+    <!--    Fragment 2-->
+
+    <string name="txt_min">Minutes</string>
+    <string name="txt_seconds">Seconds</string>
+    <string name="txt_wrong">Wrong guess\ntime subtraction:</string>
+    <string name="txt_arming">Arming Time:</string>
+    <string name="txt_bomb_timer">Bomb Timer:</string>
+    <string name="txt_start">Start</string>
+    <string name="txt_hint_20">20</string>
+    <string name="txt_hint_300">300</string>
+
+
+<!--  Both  -->
+    <string name="txt_fake">Fake Bomb</string>
+
+
+
+
+</resources>

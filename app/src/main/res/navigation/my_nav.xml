@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/secondFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.mybombtest.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/fragment_open_exit" />
+        <argument
+            android:name="timerrr"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="wrongguess"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <argument
+            android:name="armtime"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.mybombtest.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/action_secondFragment_to_firstFragment"
+            app:destination="@id/firstFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_fade_exit" />
+        <argument
+            android:name="number"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+</navigation>
