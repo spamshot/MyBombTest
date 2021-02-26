@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment"
     android:background="#D89393"
-    android:id="@+id/bombLayout">
+    android:id="@+id/bombLayout"
+    android:orientation="vertical">
 
 
     <TextView

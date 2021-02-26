@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment"
     android:background="#00FFC4"
-    android:id="@+id/bombSettingsLayout">
+    android:id="@+id/bombSettingsLayout"
+    android:orientation="vertical">
 
 
     <TextView
