@@ -25,8 +25,6 @@ class FirstFragment : Fragment() {
     val defuseCode = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) //Numbers for defuseCode
 
 
-//    lateinit var bombLayout: ConstraintLayout
-
     var mediaPlayerSiren: MediaPlayer? = null //inside clear BTN
     var mediaPlayerBeeper: MediaPlayer? = null //inside Timer
     var mediaPlayerBoomBombSound: MediaPlayer? = null //inside end Timer
@@ -64,7 +62,6 @@ class FirstFragment : Fragment() {
 
 //    ............
 
-//    var startMillSeconds = 60000L
     lateinit var countdownTimer: CountDownTimer
     var isRunning: Boolean = false
     var timeInMilliSeconds = 0L
@@ -132,7 +129,6 @@ class FirstFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_first, container, false)
         txtCountDownTimerDisplay = view.findViewById(R.id.txtCountDownTimerDisplay)
-//        val myNumber = args.timerrr // gets number from other fragment for timer
         val myArmTime = args.armtime // get the arm time from other fragment for timer
 
 
@@ -201,7 +197,6 @@ class FirstFragment : Fragment() {
         btnActionOff()
 
 
-
         defuseCode.shuffle()
         defuseTxt.text = defuseCode.toString()
         shuffleAndSet()
@@ -261,13 +256,13 @@ class FirstFragment : Fragment() {
 
         clearBtn.setOnClickListener {
 
-
             defuseCode.shuffle()
             defuseTxt.text = defuseCode.toString()
             pinDisplay.text = defuseNumber.toString()
             btnOn() //todo
             wronguess()
-//            mediaPlayerSiren?.start() //plays sound
+
+            mediaPlayerSiren?.start() //plays sound
 
         }
 
@@ -277,23 +272,18 @@ class FirstFragment : Fragment() {
             if (listSize == 10) {// When they enter code to disarm bomb == 10
                 while (i <= 9) {
                     if (defuseCode.elementAt(i) == defuseNumber.elementAt(i)) { // Checks all numbers to see if they match to defuse
-//                        Toast.makeText(context, "" + diffuseNumber.elementAt(i), Toast.LENGTH_SHORT)
-//                                .show()
                         i++
                         if(i == 10){ // If all defuse code matches, this will defuse the bomb
                             Toast.makeText(context, "Bomb defused:", Toast.LENGTH_SHORT).show()
                             timerHasEndedGameWon()
                             mediaPlayerGameWon?.start()
 
-//                            bombLayout = view.findViewById(R.id.bombLayout)
-//                            bombLayout.setBackgroundColor(Color.GREEN)
                         }
                     } else {
                         Toast.makeText(context, "Disarm failed", Toast.LENGTH_SHORT).show()
                         i = 11
                         defuseCode.shuffle()
                         wronguess()
-//                        defuseNumber.clear()
                         pinDisplay.text = defuseNumber.toString()
                         defuseTxt.text = defuseCode.toString()
                         btnOn()
@@ -336,8 +326,6 @@ class FirstFragment : Fragment() {
         isRunning = true
 
 
-
-
     }
 
     fun startArmingTimer(time_in_seconds: Long) {
@@ -354,10 +342,7 @@ class FirstFragment : Fragment() {
             }
         }
 
-//        pinDisplay.text = "Tom"
-
         timerCountdownTimer.start()
-//        diffuseTxt.isVisible = false
         isArming = true
 
 
@@ -405,7 +390,16 @@ class FirstFragment : Fragment() {
         countdownTimer.cancel()
         isRunning = false
         Toast.makeText(context, "Time has ended", Toast.LENGTH_SHORT).show()
-        txtCountDownTimerDisplay.text = "0:0"
+        txtHint.isVisible = false
+
+        txtArming.isVisible = false
+
+        defuseTxt.isVisible = false
+
+        pinDisplay.isVisible = false
+
+        txtCountDownTimerDisplay.text = "Bomb defused"
+
         setHasOptionsMenu(true)
     }
 
@@ -434,6 +428,7 @@ class FirstFragment : Fragment() {
 
         val myGuess = args.wrongguess * 60000
         defuseNumber.clear()
+        pinDisplay.text = defuseNumber.toString()
         pauseTimer() // used for wrong guss
         resetTimer() // used for wrong guss
 
