@@ -463,8 +463,5 @@ class FirstFragment : Fragment() {
 // play bomb Sound - 4   https://medium.com/@dairdr/kotlin-playing-audio-file-3eeaca0d3cb1       Need End sound
 // flash timer - 1 *Meh* https://www.tutorialspoint.com/how-do-you-animate-the-change-of-background-color-of-a-view-on-android-using-kotlin   Done
 
-
 //Sound files from https://developers.google.com/assistant/tools/sound-library
 //https://developer.android.com/guide/fragments/appbar
-
-//todo add 1 sec to arming time on start
