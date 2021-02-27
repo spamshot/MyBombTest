@@ -28,7 +28,7 @@ class FirstFragment : Fragment() {
     var mediaPlayerSiren: MediaPlayer? = null //inside clear BTN
     var mediaPlayerBeeper: MediaPlayer? = null //inside Timer
     var mediaPlayerBoomBombSound: MediaPlayer? = null //inside end Timer
-    var mediaPlayerBombArming: MediaPlayer? = null // inside //todo
+    var mediaPlayerBombArming: MediaPlayer? = null // inside
     var mediaPlayerGameWon: MediaPlayer? = null // inside bomb disarmed
 
 
@@ -138,7 +138,7 @@ class FirstFragment : Fragment() {
             pauseTimer()
 
         } else {
-            timeInMill = myArmTime.toLong() * 1000L
+            timeInMill = myArmTime.toLong() * 1000L + 1000L
             startArmingTimer(timeInMill)
         }
 
