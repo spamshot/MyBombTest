@@ -10,7 +10,7 @@
 <!--    Fragment one-->
 
     <string name="txt_time">00:00</string>
-    <string name="btn_button">Button</string>
+    <string name="btn_button">1</string>
     <string name="btn_enter">Enter</string>
     <string name="btn_clear">Clear</string>
     <string name="txt_diffuse">^defuse code^</string>
