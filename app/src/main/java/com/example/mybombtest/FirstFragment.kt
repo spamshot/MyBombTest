@@ -47,7 +47,7 @@ class FirstFragment : Fragment() {
 
 
     lateinit var defuseTxt: TextView
-    lateinit var pinDisplay: TextView //pos 0
+    lateinit var pinEntered: TextView //pos 0
     lateinit var txtCountDownTimerDisplay: TextView
     lateinit var txtArming: TextView
     lateinit var txtHint: TextView
@@ -186,7 +186,7 @@ class FirstFragment : Fragment() {
 
 
         defuseTxt = view.findViewById(R.id.diffuseCodeTxt)
-        pinDisplay = view.findViewById(R.id.pinDisplay)
+        pinEntered = view.findViewById(R.id.pinEntered)
 
         txtArming = view.findViewById(R.id.txtArming)
         txtHint = view.findViewById(R.id.txtHint)
@@ -203,53 +203,53 @@ class FirstFragment : Fragment() {
 
         button0.setOnClickListener {
             defuseNumber.add(numbers[0])
-            pinDisplay.text = defuseNumber.toString()
+            pinEntered.text = defuseNumber.toString()
             shuffleAndSet()
 //            manageBlinkEffect()
         }
         button1.setOnClickListener {
             defuseNumber.add(numbers[1])
-            pinDisplay.text = defuseNumber.toString()
+            pinEntered.text = defuseNumber.toString()
             shuffleAndSet()
         }
         button2.setOnClickListener {
             defuseNumber.add(numbers[2])
-            pinDisplay.text = defuseNumber.toString()
+            pinEntered.text = defuseNumber.toString()
             shuffleAndSet()
         }
         button3.setOnClickListener {
             defuseNumber.add(numbers[3])
-            pinDisplay.text = defuseNumber.toString()
+            pinEntered.text = defuseNumber.toString()
             shuffleAndSet()
         }
         button4.setOnClickListener {
             defuseNumber.add(numbers[4])
-            pinDisplay.text = defuseNumber.toString()
+            pinEntered.text = defuseNumber.toString()
             shuffleAndSet()
         }
         button5.setOnClickListener {
             defuseNumber.add(numbers[5])
-            pinDisplay.text = defuseNumber.toString()
+            pinEntered.text = defuseNumber.toString()
             shuffleAndSet()
         }
         button6.setOnClickListener {
             defuseNumber.add(numbers[6])
-            pinDisplay.text = defuseNumber.toString()
+            pinEntered.text = defuseNumber.toString()
             shuffleAndSet()
         }
         button7.setOnClickListener {
             defuseNumber.add(numbers[7])
-            pinDisplay.text = defuseNumber.toString()
+            pinEntered.text = defuseNumber.toString()
             shuffleAndSet()
         }
         button8.setOnClickListener {
             defuseNumber.add(numbers[8])
-            pinDisplay.text = defuseNumber.toString()
+            pinEntered.text = defuseNumber.toString()
             shuffleAndSet()
         }
         button9.setOnClickListener {
             defuseNumber.add(numbers[9])
-            pinDisplay.text = defuseNumber.toString()
+            pinEntered.text = defuseNumber.toString()
             shuffleAndSet()
         }
 
@@ -258,7 +258,7 @@ class FirstFragment : Fragment() {
 
             defuseCode.shuffle()
             defuseTxt.text = defuseCode.toString()
-            pinDisplay.text = defuseNumber.toString()
+            pinEntered.text = defuseNumber.toString()
             btnOn() //todo
             wronguess()
 
@@ -284,7 +284,7 @@ class FirstFragment : Fragment() {
                         i = 11
                         defuseCode.shuffle()
                         wronguess()
-                        pinDisplay.text = defuseNumber.toString()
+                        pinEntered.text = defuseNumber.toString()
                         defuseTxt.text = defuseCode.toString()
                         btnOn()
                     }
@@ -312,7 +312,7 @@ class FirstFragment : Fragment() {
 
                 defuseTxt.isVisible = false
 
-                pinDisplay.isVisible = false
+                pinEntered.isVisible = false
 
                 txtCountDownTimerDisplay.text = "BOOM MOTHER FUCKER"
             }
@@ -396,7 +396,7 @@ class FirstFragment : Fragment() {
 
         defuseTxt.isVisible = false
 
-        pinDisplay.isVisible = false
+        pinEntered.isVisible = false
 
         txtCountDownTimerDisplay.text = "Bomb defused"
 
@@ -428,7 +428,7 @@ class FirstFragment : Fragment() {
 
         val myGuess = args.wrongguess * 60000
         defuseNumber.clear()
-        pinDisplay.text = defuseNumber.toString()
+        pinEntered.text = defuseNumber.toString()
         pauseTimer() // used for wrong guss
         resetTimer() // used for wrong guss
 
