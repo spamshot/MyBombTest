@@ -36,11 +36,10 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="26dp"
         android:text="@string/btn_button"
         app:layout_constraintStart_toEndOf="@+id/button0"
-        app:layout_constraintTop_toTopOf="@+id/button0"
-        />
+        app:layout_constraintTop_toTopOf="@+id/button0" />
 
     <Button
         android:id="@+id/button2"
