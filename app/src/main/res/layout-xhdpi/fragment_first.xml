@@ -141,7 +141,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="zzzzzzzz"
+        android:text=""
         android:textSize="18sp"
         android:textStyle="bold"
         android:visibility="invisible"
