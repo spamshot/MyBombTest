@@ -71,7 +71,7 @@ class FirstFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mediaPlayerSiren = MediaPlayer.create(context, R.raw.emergency_siren_short_burst) //Loads sound for clear BTN
+        mediaPlayerSiren = MediaPlayer.create(context, R.raw.emergency_siren_short_bursttwo) //Loads sound for clear BTN
         mediaPlayerBeeper = MediaPlayer.create(context, R.raw.beeper) //Loads sound for timer
         mediaPlayerBoomBombSound = MediaPlayer.create(context, R.raw.explosionbomb)//Loads BombBoomSound
         mediaPlayerBombArming = MediaPlayer.create(context, R.raw.alarmhugescifsp) //Loads Arming Bomb
