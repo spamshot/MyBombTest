@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_time"
-        android:textSize="60sp"
+        android:textSize="54sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,9 +26,9 @@
 
     <Button
         android:id="@+id/button0"
-        android:layout_width="65dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="188dp"
         android:text="@string/btn_button"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,25 +36,25 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="65dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
+        android:layout_marginStart="16dp"
         android:text="@string/btn_button"
         app:layout_constraintStart_toEndOf="@+id/button0"
         app:layout_constraintTop_toTopOf="@+id/button0" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="65dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
+        android:layout_marginStart="16dp"
         android:text="@string/btn_button"
         app:layout_constraintStart_toEndOf="@+id/button1"
         app:layout_constraintTop_toTopOf="@+id/button1" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="65dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/btn_button"
@@ -65,7 +65,7 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="65dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/btn_button"
@@ -76,7 +76,7 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="65dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/btn_button"
@@ -87,7 +87,7 @@
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="65dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/btn_button"
@@ -98,7 +98,7 @@
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="65dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/btn_button"
@@ -109,7 +109,7 @@
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="65dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/btn_button"
@@ -119,7 +119,7 @@
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="65dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/btn_button"
@@ -133,12 +133,13 @@
         android:id="@+id/diffuseCodeTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text=""
         android:textSize="12sp"
-        android:visibility="invisible"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/pinEntered"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias=".5"
         app:layout_constraintStart_toStartOf="@+id/pinEntered"
         app:layout_constraintTop_toBottomOf="@+id/pinEntered" />
 
@@ -156,22 +157,23 @@
         android:id="@+id/txtHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/txt_diffuse"
         android:textStyle="bold"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/button1"
         app:layout_constraintEnd_toEndOf="@+id/diffuseCodeTxt"
-        app:layout_constraintStart_toStartOf="@+id/diffuseCodeTxt" />
+        app:layout_constraintStart_toStartOf="@+id/diffuseCodeTxt"
+        app:layout_constraintTop_toBottomOf="@+id/diffuseCodeTxt" />
 
     <TextView
         android:id="@+id/pinEntered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textSize="30sp"
+        android:text=""
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/txtCountDownTimerDisplay"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="@+id/txtCountDownTimerDisplay"
         app:layout_constraintTop_toBottomOf="@+id/txtCountDownTimerDisplay" />
 

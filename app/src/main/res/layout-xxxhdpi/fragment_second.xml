@@ -33,7 +33,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/editTime"
         app:layout_constraintStart_toEndOf="@+id/editTime"
         app:layout_constraintTop_toTopOf="@+id/editTime"
-        app:layout_constraintVertical_bias="0.622" />
+        app:layout_constraintVertical_bias="0.75" />
 
 
     <EditText
@@ -62,18 +62,18 @@
         app:layout_constraintStart_toStartOf="@+id/txtArmTime"
         app:layout_constraintTop_toBottomOf="@+id/txtArmTime" />
 
+
     <TextView
         android:id="@+id/txtArmTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="93dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="204dp"
         android:text="@string/txt_arming"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extInFo" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editArmTime"
@@ -99,7 +99,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/editArmTime"
         app:layout_constraintStart_toEndOf="@+id/editArmTime"
         app:layout_constraintTop_toTopOf="@+id/editArmTime"
-        app:layout_constraintVertical_bias="0.656" />
+        app:layout_constraintVertical_bias="0.75" />
 
     <TextView
         android:id="@+id/textView3"
@@ -137,7 +137,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/editMinusTime"
         app:layout_constraintStart_toEndOf="@+id/editMinusTime"
         app:layout_constraintTop_toTopOf="@+id/editMinusTime"
-        app:layout_constraintVertical_bias="0.656" />
+        app:layout_constraintVertical_bias="0.70" />
 
     <Button
         android:id="@+id/btnStart"
