@@ -279,13 +279,16 @@ class FirstFragment : Fragment() {
 
                         }
                     } else {
+                        btnOn()
                         Toast.makeText(context, "Disarm failed", Toast.LENGTH_SHORT).show()
+                        mediaPlayerSiren?.start()
                         i = 11
                         defuseCode.shuffle()
                         wronguess()
                         pinEntered.text = defuseNumber.toString()
                         defuseTxt.text = defuseCode.toString()
-                        btnOn()
+
+
                     }
                 }
             }
@@ -314,6 +317,7 @@ class FirstFragment : Fragment() {
                 pinEntered.isVisible = false
 
                 txtCountDownTimerDisplay.text = "BOOM MOTHER FUCKER"
+
             }
             override fun onTick(p0: Long) {
                 timeInMilliSeconds = p0
@@ -371,7 +375,7 @@ class FirstFragment : Fragment() {
 
 
     private fun timerHasEnded() {
-        btnOff()// turns off buttons when timer has ended
+
         btnActionOff()
 
         countdownTimer.cancel()
@@ -379,7 +383,10 @@ class FirstFragment : Fragment() {
         Toast.makeText(context, "Time has ended", Toast.LENGTH_SHORT).show()
         txtCountDownTimerDisplay.text = "0:0"
         setHasOptionsMenu(true)
+        mediaPlayerBeeper?.stop()
+        mediaPlayerSiren?.stop()
         mediaPlayerBoomBombSound?.start()
+        btnOff()// turns off buttons when timer has ended
     }
 
 
@@ -398,6 +405,7 @@ class FirstFragment : Fragment() {
         pinEntered.isVisible = false
 
         txtCountDownTimerDisplay.text = "Bomb defused"
+
 
         setHasOptionsMenu(true)
     }
@@ -464,3 +472,5 @@ class FirstFragment : Fragment() {
 
 //Sound files from https://developers.google.com/assistant/tools/sound-library
 //https://developer.android.com/guide/fragments/appbar
+
+// TODO: 3/2/2021 replace boom mother fucker with image 
