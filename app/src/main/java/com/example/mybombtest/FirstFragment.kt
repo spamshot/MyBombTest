@@ -17,32 +17,32 @@ import androidx.navigation.fragment.navArgs
 class FirstFragment : Fragment() {
 
 
-    val args: FirstFragmentArgs by navArgs()
+    private val args: FirstFragmentArgs by navArgs()
 
-    val numbers = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) //Numbers for button shuffle
-    val defuseNumber = mutableListOf<Int>() //Number we type in and use to check with defuseNumber
+    private val numbers = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) //Numbers for button shuffle
+    private val defuseNumber = mutableListOf<Int>() //Number we type in and use to check with defuseNumber
 
-    val defuseCode = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) //Numbers for defuseCode
+    private val defuseCode = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) //Numbers for defuseCode
 
-    var mediaPlayerSiren: MediaPlayer? = null //inside clear BTN
-    var mediaPlayerBeeper: MediaPlayer? = null //inside Timer
-    var mediaPlayerBoomBombSound: MediaPlayer? = null //inside end Timer
-    var mediaPlayerBombArming: MediaPlayer? = null // inside
-    var mediaPlayerGameWon: MediaPlayer? = null // inside bomb disarmed
+    private var mediaPlayerSiren: MediaPlayer? = null //inside clear BTN
+    private var mediaPlayerBeeper: MediaPlayer? = null //inside Timer
+    private var mediaPlayerBoomBombSound: MediaPlayer? = null //inside end Timer
+    private var mediaPlayerBombArming: MediaPlayer? = null // inside
+    private var mediaPlayerGameWon: MediaPlayer? = null // inside bomb disarmed
 
 
-    lateinit var enterBtn: Button
-    lateinit var clearBtn: Button
-    lateinit var button0: Button
-    lateinit var button1: Button
-    lateinit var button2: Button
-    lateinit var button3: Button
-    lateinit var button4: Button
-    lateinit var button5: Button
-    lateinit var button6: Button
-    lateinit var button7: Button
-    lateinit var button8: Button
-    lateinit var button9: Button
+    private lateinit var enterBtn: Button
+    private lateinit var clearBtn: Button
+    private lateinit var button0: Button
+    private lateinit var button1: Button
+    private lateinit var button2: Button
+    private lateinit var button3: Button
+    private lateinit var button4: Button
+    private lateinit var button5: Button
+    private lateinit var button6: Button
+    private lateinit var button7: Button
+    private lateinit var button8: Button
+    private lateinit var button9: Button
 
 
     lateinit var defuseTxt: TextView
@@ -55,14 +55,14 @@ class FirstFragment : Fragment() {
 
 //    ............
 
-    lateinit var timerCountdownTimer: CountDownTimer
-    var isArming: Boolean = false
-    var timeInMill = 0L
+    private lateinit var timerCountdownTimer: CountDownTimer
+    private var isArming: Boolean = false
+    private var timeInMill = 0L
 
 //    ............
 
-    lateinit var countdownTimer: CountDownTimer
-    var isRunning: Boolean = false
+    private lateinit var countdownTimer: CountDownTimer
+    private var isRunning: Boolean = false
     var timeInMilliSeconds = 0L
 
     ///////TIMER////////////TIMER//////////////TIMER////////////TIMER/////////
@@ -79,7 +79,7 @@ class FirstFragment : Fragment() {
 
     }
 
-    fun btnOn() {
+    private fun btnOn() {
         button0.isEnabled = true
         button1.isEnabled = true
         button2.isEnabled = true
@@ -93,7 +93,7 @@ class FirstFragment : Fragment() {
 
     }
 
-    fun btnOff() {
+    private fun btnOff() {
         button0.isEnabled = false
         button1.isEnabled = false
         button2.isEnabled = false
@@ -108,12 +108,12 @@ class FirstFragment : Fragment() {
 
     }
 
-    fun btnActionOff() {
+    private fun btnActionOff() {
         enterBtn.isEnabled = false
         clearBtn.isEnabled = false
 
     }
-    fun btnActionOn() {
+    private fun btnActionOn() {
         enterBtn.isEnabled = true
         clearBtn.isEnabled = true
 
@@ -259,7 +259,7 @@ class FirstFragment : Fragment() {
             defuseTxt.text = defuseCode.toString()
             pinEntered.text = defuseNumber.toString()
             btnOn() //todo
-            wronguess()
+            wrongGuess()
 
             mediaPlayerSiren?.start() //plays sound
 
@@ -284,7 +284,7 @@ class FirstFragment : Fragment() {
                         mediaPlayerSiren?.start()
                         i = 11
                         defuseCode.shuffle()
-                        wronguess()
+                        wrongGuess()
                         pinEntered.text = defuseNumber.toString()
                         defuseTxt.text = defuseCode.toString()
 
@@ -295,7 +295,7 @@ class FirstFragment : Fragment() {
         }
 
     }
-    fun pauseTimer() {
+    private fun pauseTimer() {
 
         countdownTimer.cancel()
         isRunning = false
@@ -303,7 +303,7 @@ class FirstFragment : Fragment() {
     }
 
 
-    fun startTimer(time_in_seconds: Long) {
+    private fun startTimer(time_in_seconds: Long) {
         countdownTimer = object : CountDownTimer(time_in_seconds, 1000) {
             override fun onFinish() {
                 timerHasEnded()
@@ -331,7 +331,7 @@ class FirstFragment : Fragment() {
 
     }
 
-    fun startArmingTimer(time_in_seconds: Long) {
+    private fun startArmingTimer(time_in_seconds: Long) {
         timerCountdownTimer = object : CountDownTimer(time_in_seconds, 1000) {
             override fun onFinish() {
                 armingHasEnded()
@@ -352,7 +352,7 @@ class FirstFragment : Fragment() {
     }
 
     private fun resetTimer() {
-        timeInMilliSeconds = timeInMilliSeconds - 3000L
+        timeInMilliSeconds -= 3000L
         updateTextUI()
 
     }
@@ -415,7 +415,6 @@ class FirstFragment : Fragment() {
         timerCountdownTimer.cancel()
         isArming = false
         Toast.makeText(context, "Bomb Armed", Toast.LENGTH_SHORT).show()
-//        txtTimerDisplay.text = "0:0"
         mediaPlayerBombArming?.stop()
         bombStarted()
         txtArming.isVisible = false
@@ -431,7 +430,7 @@ class FirstFragment : Fragment() {
 
     }
 
-    fun wronguess(){
+    private fun wrongGuess(){
 
         val myGuess = args.wrongguess * 60000
         defuseNumber.clear()
