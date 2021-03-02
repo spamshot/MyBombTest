@@ -1,6 +1,5 @@
 package com.example.mybombtest
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,24 +7,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
+
 
 
 class SecondFragment : Fragment() {
 
 
-    lateinit var editTime: EditText
-    lateinit var editMinusTime: EditText
-    lateinit var editArmTime: EditText
+    private lateinit var editTime: EditText
+    private lateinit var editMinusTime: EditText
+    private lateinit var editArmTime: EditText
     private lateinit var btnStart: Button
 
 
-    lateinit var bombSettingsLayout: ConstraintLayout
+    private lateinit var bombSettingsLayout: ConstraintLayout
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
