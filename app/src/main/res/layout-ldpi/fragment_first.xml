@@ -133,17 +133,16 @@
         android:id="@+id/diffuseCodeTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="zzzzzzzzzzzzzzzzzzzzzzzzzzz"
         android:textSize="12sp"
-
+        android:visibility="invisible"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/txtCountDownTimerDisplay"
-        app:layout_constraintStart_toStartOf="@+id/txtCountDownTimerDisplay"
-        app:layout_constraintTop_toBottomOf="@+id/txtCountDownTimerDisplay" />
+        app:layout_constraintEnd_toEndOf="@+id/pinEntered"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/pinEntered"
+        app:layout_constraintTop_toBottomOf="@+id/pinEntered" />
 
     <TextView
-        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -161,32 +160,31 @@
         android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/button1"
-        app:layout_constraintEnd_toEndOf="@+id/pinEntered"
-        app:layout_constraintStart_toStartOf="@+id/pinEntered" />
+        app:layout_constraintEnd_toEndOf="@+id/diffuseCodeTxt"
+        app:layout_constraintStart_toStartOf="@+id/diffuseCodeTxt" />
 
     <TextView
         android:id="@+id/pinEntered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="zzzzzz"
+        android:layout_marginTop="16dp"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtHint"
-        app:layout_constraintEnd_toEndOf="@+id/txtArming"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="@+id/txtArming" />
+        app:layout_constraintEnd_toEndOf="@+id/txtCountDownTimerDisplay"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/txtCountDownTimerDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/txtCountDownTimerDisplay" />
 
     <TextView
         android:id="@+id/txtArming"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="4dp"
         android:text="Arming Bomb"
-        android:visibility="invisible"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCountDownTimerDisplay" />
 
