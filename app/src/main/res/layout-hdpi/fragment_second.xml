@@ -136,7 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:text="@string/txt_min"
+        android:text="@string/txt_seconds"
         android:textStyle="bold"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/editMinusTime"

@@ -22,7 +22,7 @@ class FirstFragment : Fragment() {
     private val numbers = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) //Numbers for button shuffle
     private val defuseNumber = mutableListOf<Int>() //Number we type in and use to check with defuseNumber
 
-    private val defuseCode = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) //Numbers for defuseCode
+    private val defuseCode = mutableListOf(0, 1, 2, 3, 4, 5) //Numbers for defuseCode
 
     private var mediaPlayerSiren: MediaPlayer? = null //inside clear BTN
     private var mediaPlayerBeeper: MediaPlayer? = null //inside Timer
@@ -152,7 +152,7 @@ class FirstFragment : Fragment() {
         fun shuffleAndSet() {
             numbers.shuffle()
             val listSize = defuseNumber.size
-            if (listSize == 10) {// when list is 10
+            if (listSize == 6) {// when list is 10
                 Toast.makeText(context, "Code entered", Toast.LENGTH_SHORT).show()
                 btnOff() // turns off buttons when max code
             }
@@ -268,11 +268,11 @@ class FirstFragment : Fragment() {
         enterBtn.setOnClickListener {
             val listSize = defuseNumber.size
             var i = 0
-            if (listSize == 10) {// When they enter code to disarm bomb == 10
-                while (i <= 9) {
+            if (listSize == 6) {// When they enter code to disarm bomb == 10
+                while (i <= 5) {
                     if (defuseCode.elementAt(i) == defuseNumber.elementAt(i)) { // Checks all numbers to see if they match to defuse
                         i++
-                        if(i == 10){ // If all defuse code matches, this will defuse the bomb
+                        if(i == 6){ // If all defuse code matches, this will defuse the bomb
                             Toast.makeText(context, "Bomb defused:", Toast.LENGTH_SHORT).show()
                             timerHasEndedGameWon()
                             mediaPlayerGameWon?.start()
@@ -432,7 +432,7 @@ class FirstFragment : Fragment() {
 
     private fun wrongGuess(){
 
-        val myGuess = args.wrongguess * 60000
+        val myGuess = args.wrongguess * 100
         defuseNumber.clear()
         pinEntered.text = defuseNumber.toString()
         pauseTimer() // used for wrong guss
