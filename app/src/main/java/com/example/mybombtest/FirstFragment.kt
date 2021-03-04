@@ -22,7 +22,7 @@ class FirstFragment : Fragment() {
     private val numbers = mutableListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) //Numbers for button shuffle
     private val defuseNumber = mutableListOf<Int>() //Number we type in and use to check with defuseNumber
 
-    private val defuseCode = mutableListOf(0, 1, 2, 3, 4, 5) //Numbers for defuseCode
+    private val defuseCode = mutableListOf<Int>() //Numbers for defuseCode
 
     private var mediaPlayerSiren: MediaPlayer? = null //inside clear BTN
     private var mediaPlayerBeeper: MediaPlayer? = null //inside Timer
@@ -149,24 +149,8 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        fun shuffleAndSet() {
-            numbers.shuffle()
-            val listSize = defuseNumber.size
-            if (listSize == 6) {// when list is 10
-                Toast.makeText(context, "Code entered", Toast.LENGTH_SHORT).show()
-                btnOff() // turns off buttons when max code
-            }
-            button0.text = numbers[0].toString()
-            button1.text = numbers[1].toString()
-            button2.text = numbers[2].toString()
-            button3.text = numbers[3].toString()
-            button4.text = numbers[4].toString()
-            button5.text = numbers[5].toString()
-            button6.text = numbers[6].toString()
-            button7.text = numbers[7].toString()
-            button8.text = numbers[8].toString()
-            button9.text = numbers[9].toString()
-        }
+
+
 
 
         clearBtn = view.findViewById(R.id.clearBtn)
@@ -196,15 +180,19 @@ class FirstFragment : Fragment() {
         btnActionOff()
 
 
-        defuseCode.shuffle()
-        defuseTxt.text = defuseCode.toString()
+
+
+//        defuseCode.shuffle()
+//        defuseTxt.text = defuseCode.toString()
         shuffleAndSet()
+
+        populateDefuseCode()
 
         button0.setOnClickListener {
             defuseNumber.add(numbers[0])
             pinEntered.text = defuseNumber.toString()
             shuffleAndSet()
-//            manageBlinkEffect()
+
         }
         button1.setOnClickListener {
             defuseNumber.add(numbers[1])
@@ -255,7 +243,7 @@ class FirstFragment : Fragment() {
 
         clearBtn.setOnClickListener {
 
-            defuseCode.shuffle()
+//            defuseCode.shuffle()
             defuseTxt.text = defuseCode.toString()
             pinEntered.text = defuseNumber.toString()
             btnOn() //todo
@@ -283,7 +271,7 @@ class FirstFragment : Fragment() {
                         Toast.makeText(context, "Disarm failed", Toast.LENGTH_SHORT).show()
                         mediaPlayerSiren?.start()
                         i = 11
-                        defuseCode.shuffle()
+                       populateDefuseCode()
                         wrongGuess()
                         pinEntered.text = defuseNumber.toString()
                         defuseTxt.text = defuseCode.toString()
@@ -295,6 +283,40 @@ class FirstFragment : Fragment() {
         }
 
     }
+
+    fun populateDefuseCode(){
+
+        defuseCode.add(numbers[0])
+        defuseCode.add(numbers[1])
+        defuseCode.add(numbers[2])
+        defuseCode.add(numbers[3])
+        defuseCode.add(numbers[4])
+        defuseCode.add(numbers[5])
+        defuseTxt.text = defuseCode.toString()
+
+    }
+
+    fun shuffleAndSet() {
+        numbers.shuffle()
+
+        val listSize = defuseNumber.size
+        if (listSize == 6) {// when list is 10
+            Toast.makeText(context, "Code entered", Toast.LENGTH_SHORT).show()
+            btnOff() // turns off buttons when max code
+        }
+        button0.text = numbers[0].toString()
+        button1.text = numbers[1].toString()
+        button2.text = numbers[2].toString()
+        button3.text = numbers[3].toString()
+        button4.text = numbers[4].toString()
+        button5.text = numbers[5].toString()
+        button6.text = numbers[6].toString()
+        button7.text = numbers[7].toString()
+        button8.text = numbers[8].toString()
+        button9.text = numbers[9].toString()
+    }
+
+
     private fun pauseTimer() {
 
         countdownTimer.cancel()
@@ -434,9 +456,14 @@ class FirstFragment : Fragment() {
 
         val myGuess = args.wrongguess * 100
         defuseNumber.clear()
+        defuseCode.clear()
+
+        shuffleAndSet()
+
         pinEntered.text = defuseNumber.toString()
         pauseTimer() // used for wrong guss
         resetTimer() // used for wrong guss
+        populateDefuseCode()
 
 
         startTimer(timeInMilliSeconds - myGuess.toLong())
